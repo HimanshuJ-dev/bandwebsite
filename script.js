@@ -40,7 +40,7 @@ function counttickets(month) {
             count++;
         }
     })
-    console.log(count);
+    // console.log(count);
     return count;
 }
 
@@ -71,14 +71,6 @@ const monthlyspawnerhtml = monthsList.map((month, index) => {
 }).join('')
 
 let monthlyspawner = document.getElementById('concertmonthlyspawner');
-
-
-function test() {
-    console.log('this is test');
-}
-
-test();
-
 
 const crtid = 12345;
 
@@ -116,7 +108,7 @@ const merchspawnerhtml = merchandise.map((merch, index) => {
             <strong>${merch.merchName}</strong>
             <h4>${merch.merchCategory}</h4>
             <p>${merch.merchPrize}</p>
-            <button onclick="insidehtml()">Buy Tickets</button>
+            <button onclick=" new swal('Availble Soon')">Coming Soon</button>
         </div>
     </div>`
 }).join('')

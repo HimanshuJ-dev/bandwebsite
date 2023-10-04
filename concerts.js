@@ -1,6 +1,6 @@
 export const concert = [
     {
-        concertMonth: "January",
+        concertMonth: "october",
         concertLocation: "Delhi, India",
         concertImage: "./images/india.jpg",
         concertDate: "20 October 2023",

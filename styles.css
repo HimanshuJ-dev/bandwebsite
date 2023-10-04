@@ -722,6 +722,20 @@ footer p a:hover{
         width: 90%;
         margin: auto;
     }
+
+    .floatingimageandname img {
+        width: 400px;
+        border-radius: 20px;
+        border: 2px solid gray;
+    }
+
+    .floatingdetailsandbooking input {
+        border: 1px solid black;
+    }
+
+    .floatingnumberoftickets select {
+        border: 1px solid black;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -756,6 +770,76 @@ footer p a:hover{
     .banddivmembers{
         flex-wrap: wrap;
     }
+
+    .floatingpopup{
+        width: 70%;
+        /* margin-top: 50px; */
+    }
+
+    .floatingticketcontainer {
+        display: block;
+    }
+
+    #floatingticketimage {
+        text-align: center;
+    }
+
+    #floatingticketimage img{
+        width: 100%;
+    }
+
+    .floatingimageandname{
+        padding-bottom: 0;
+    }
+
+    .floatingdetailsandbooking {
+        padding-top: 10px;
+    }
+
+    .floatingimageandname h1 {
+        font-size: 30px;
+    }
+
+    .floatingimageandname h2 {
+        font-size: 20px;
+    }
+
+    .floatingdetailsandbooking h1{
+        font-size: 20px;
+    }
+
+    .floatingdetailsandbooking p {
+        font-size: 15px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .floatingdetailsandbooking h4 {
+        font-size: 20px;
+    }
+
+    .floatingdetailsandbooking input {
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .floatingnumberoftickets {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .floatingbookingbtncontainer {
+        margin-top: 10px;
+    }
+        
+    .floatingbookingbtncontainer button {
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 699px){
@@ -788,6 +872,33 @@ footer p a:hover{
     }
 
     
+}
+
+@media screen and (max-width: 550px){
+    .floatingpopup{
+        width: 90%;
+        padding: 10px;
+    }
+
+    .floatingimageandname{
+        padding: 10px 10px 0 10px;
+    }
+
+    .floatingdetailsandbooking{
+        padding: 10px;
+    }
+
+    .floatingimageandname h1 {
+        font-size: 25px;
+    }
+
+    .floatingimageandname h2 {
+        font-size: 20px;
+    }
+
+    .floatingdetailsandbooking h1{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 499px){

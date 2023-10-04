@@ -11,21 +11,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="functioncontainer.js"></script> -->
     <script>
+        var gloabalemail = "sample@mail.com";
         function togglePopUp() {
                 const floatingcont = document.getElementById('floatcont');
                 floatingcont.classList.toggle('showing');
                 const floatingtkt = document.getElementById('floatticket');
                 floatingtkt.classList.toggle('showing');
             }
-            function toggleConfirmation() {
+        function toggleConfirmation() {
                 const floatingcont = document.getElementById('confirmcont');
                 floatingcont.classList.toggle('showing');
                 const floatingtkt = document.getElementById('floatconfirm');
                 floatingtkt.classList.toggle('showing');
+            }
+
+        function trigger() {
+                // console.log('function did run');
+                // console.log(gloabalemail);
+                const floatingconfirmemail = document.getElementById('finalconfirmemail');
+                floatingconfirmemail.innerHTML = gloabalemail;
+                togglePopUp();
+                toggleConfirmation();
             }
         
 
@@ -40,9 +51,19 @@
             const floatingnooftickets = document.getElementById('noOfTickets');
             const floatingtotalprice = document.getElementById('floatingtickettotalprice');
             const floatingbookbtn = document.getElementById('flaotingbooknowbtn');
-            const floatingconfirmemail = document.getElementById('finalconfirmemail');
+            // const floatingconfirmemail = document.getElementById('finalconfirmemail');
+
+            gloabalemail = floatingemail.value;
+
+            floatingemail.addEventListener('change', ()=>{
+                gloabalemail = floatingemail.value;
+            })
+
+            
 
             floatingimage.innerHTML = `<img src="${ctimage}" alt="">`;
+            floatingemail.value = "";
+            floatingnooftickets.value = '1';
             floatinglocation.innerHTML = ctlocation;
             floatingdate.innerHTML = ctdate;
             floatingheading.innerHTML = `This ${ctmonth} we are coming to ${ctlocation}.`;
@@ -55,17 +76,15 @@
             });
             const useremailforbooking = floatingemail.value;
 
-            floatingbookbtn.addEventListener('click', () => {
-                console.log('function did run');
-                floatingconfirmemail.innerHTML = floatingemail.value;
-                floatingemail.value = "";
-                floatingnooftickets.value = '1';
-                togglePopUp();
-                toggleConfirmation();
-            });
+            floatingbookbtn.addEventListener('click', trigger);
+            // floatingbookbtn.removeEventListener('click', trigger);
+
+            
             
             togglePopUp();
         }
+
+        
 
         function bookticketfinal(useremailforbooking) {
                 togglePopUp();
@@ -148,7 +167,7 @@
         <div class="floatingconfirmation" id="floatconfirm">
             <h1>Thank you for considering</h1>
             <h2>Your ticket details and final payment link will be sent to</h2>
-            <h3 id="finalconfirmemail">useremailaddress</h3>
+            <h3 id="finalconfirmemail">Your email address</h3>
             <h4>We will see you in the concert</h4>
             <button onclick="toggleConfirmation()">OK</button>
         </div>
@@ -275,9 +294,6 @@
     <script src="concerts.js" type="module"></script>
     <script src="storedmessages.js" type="module"></script>
     <script src="script.js" type="module"></script>
-    <script>
-        
-    </script>
     <!-- <div onload="test()" style="display: none;"></div> -->
 </body>
 </html>
